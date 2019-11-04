@@ -73,4 +73,9 @@ public class TrackerResource {
         release.setId(id);
         return this.releaseService.save(release);
     }
+
+    @RequestMapping(value = "/tickets/appId/{id}", method = RequestMethod.GET)
+    public List<Ticket> findByApplicationId(@PathVariable("id") String appid){
+        return this.ticketRepository.findByAppId(appid);
+    }
 }

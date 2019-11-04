@@ -1,6 +1,7 @@
 package br.com.rbsj.java_mongodb.model;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -15,6 +16,9 @@ public class Release {
     private String description;
     private List<Ticket> tickets;
     private LocalDate releaseDate;
+
+    @Transient
+    private Double estimatedCosts;
 
     public Release() {
 
